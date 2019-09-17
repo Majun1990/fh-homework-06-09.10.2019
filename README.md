@@ -1,113 +1,75 @@
-# Homework 6 - Coding Challenges Part 1
+# <Project Name>
 
-## Due Date
+<Project Description>
 
-TBD
+This app powers <Project Name> located [here](Heroku Project URL)
 
-## Goals
+## Getting Started
 
-- The purpose of this homework assignment is to solve 2 coding challenges using
-  the Ruby Programming Language.  This will help you get comfortable with your
-  problem solving abilities.
+## Software requirements
 
-## Readings and Resources
+- Rails 5.0.0 or higher
 
-'Solving Problems Breaking It Down' by John Sonmez - https://simpleprogrammer.com/2011/01/08/solving-problems-breaking-it-down
+- Ruby 2.3.1 or higher
 
-'Recursion Revealed!' by Charlie Brooke O'Hara - https://medium.com/@charlie.b.ohara/recursion-revealed-f8543e4dad1c
+- PostgreSQL 9.5.x or higher
 
-'Ruby Docs' - http://www.ruby-lang.org/en/documentation/
+## Navigate to the Rails application
 
-'Rails Guides' - http://guides.rubyonrails.org/index.html
+```
+$ cd /path/to/rails/application
+```
 
-## Coding Task 1:  Balanced Parenthesis (i.e. {[( )
+## Set configuration files
 
-- Write a function which determines whether or not a string of characters are
-  balanced.  Thus, your Ruby program should return `true` if it's balanced and
-  `false` otherwise.
+```
+$ cp config/database.yml.template config/database.yml
+$ cp config/initializers/mail.rb.template config/initializers/mail.rb
+```
 
-  In order to complete this challenge, all specs must pass and you can run them
-  by doing the following:
+Note:  You may need to edit the above files as necessary for your system.
 
-  ```
-  $ cp /path/to/homework-06/challenge1
-  $ rspec
-  ```
+## Create the database
 
-  The expected output is as follows:
+ ```
+ $ pgstart
+ $ rake db:create
+ ```
 
-  ```
-  .......
+## Migrating and seeding the database
 
-  Finished in 0.00179 seconds (files took 0.09853 seconds to load)
-  7 examples, 0 failures
-  ```
+```
+$ rake db:migrate
+$ rake db:seed
+```
 
-## Coding Task 2:  Sum Of Three
+## Starting the local server
 
-- Writing a function that takes an array of integers. If any 3 integers in the
-  array sum up to equal 0, return them. If not, return empty array (i.e. []).  Your solution should return an array of arrays.  For example,
+```
+$ rails server
 
-  ```
-  >> Challenge2.sum_to_0([1, 2, 3, -4])
-  => [[1, 3, -4]]
+   or
 
-  >> Challenge2.sum_to_0([1, 2, 3, -2, -4, 6])
-  => [[1, 3, -4], [-2, -4, 6]]
+$ rails s
+```
 
-  >> Challenge2.sum_to_0([1, 2, 3, -2, -4, 6, 7, -8, 10, 0, 3, 4])
-  => [[1, 3, -4], [1, -4, 3], [1, 7, -8], [2, -2, 0], [2, 6, -8], [-2, -4, 6],
-     [-2, -8, 10], [-4, 0, 4]]
-  ```
-
-  In order to complete this challenge, all specs must pass and you can run them
-  by doing the following:
+## Production Deployment
 
   ```
-  $ cp /path/to/homework-06/challenge2
-  $ rspec
+  $ git push heroku master
+  $ heroku run rake db:migrate
   ```
 
-  The expected output is as follows:
+## Support
 
-  ```
-  ....
+Bug reports and feature requests can be filed with the rest for the Ruby on Rails project here:
 
-  Finished in 0.00189 seconds (files took 0.10315 seconds to load)
-  4 examples, 0 failures
-  ```
+* [File Bug Reports and Features](https://github.com/<user-name>/<project-repo>/issues)
 
-## Coding Task 3:  Incorporating challenge 1 or 2 into a Rails application
+## License
 
-  - Write a Rails application which incorporates your answer to challenge 1 or  
-    2.  For example,
+<Project Name> is released under the [MIT license](https://mit-license.org).
 
-    - using challenge 1
+## Copyright
 
-      - enter valid input
-        - all other inputs should generate a warning message
-      - save it the the database (do not insert duplicates)
-        - value of the input and result of the computation should be stored
-      - display the result in the browser
-
-    - using challenge 2
-
-      - enter valid input
-        - invalid inputs should generate a warning message
-        - inputs too large should generate a warning message
-      - save valid input and responses to the the database
-        (do not insert duplicates)
-        - value of the input and result of the computation should be stored
-      - display the result in the browser
-
-    Note: Please feel free to come up with your own idea which incorporates
-          your solution and the above is just an example.
-
-## Deliverables
-
-- Please create a repo called `homework-06` on Github.com and push your
-  finished work there.
-
-## Have Questions
-
-Please make a reasonable effort to complete the homework prior to our next session.  If you have any questions regarding this homework, please do send me a message via Slack.
+copyright:: (c) Copyright 2018 <First Name> <Last Name>. All Rights Reserved.

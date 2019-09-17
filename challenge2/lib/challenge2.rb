@@ -1,5 +1,5 @@
 class Challenge2
-  def self.sum_to_0(_array)
+  def self.sum_to_0(array)
     # your implementation goes here
   end
 end
