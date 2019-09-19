@@ -1,6 +1,11 @@
 class Challenge2
   def self.sum_to_0(array)
-    array.each do |number|
-      if number.inject(3){|sum, n| sum + n} == 0
+    stack = []
+    array.each do |number| #go through each number of array
+        stack.push
+        stack.find_all{|sum, number| sum + number == 0}
+        return stack
+    end
+
   end
 end
